@@ -7,6 +7,11 @@ namespace Source.Models
             TimeToFizzle = timeToFizzle;
         }
 
-        public float TimeToFizzle { get; }
+        public float TimeToFizzle { get; private set; }
+
+        public void Update(float deltaTime)
+        {
+            TimeToFizzle -= deltaTime;
+        }
     }
 }
