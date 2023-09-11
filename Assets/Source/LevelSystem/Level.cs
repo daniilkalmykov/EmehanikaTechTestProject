@@ -1,6 +1,8 @@
 using System;
+using System.Runtime.CompilerServices;
 using Source.Models;
 
+[assembly: InternalsVisibleTo("Assembly-Csharp")]
 namespace Source.LevelSystem
 {
     internal sealed class Level

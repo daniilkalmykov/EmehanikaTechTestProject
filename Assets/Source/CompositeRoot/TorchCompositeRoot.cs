@@ -13,6 +13,8 @@ namespace Source.CompositeRoot
         private TorchView.TorchView _torchView;
         private Light _light;
 
+        public ITorch Torch => _torch;
+
         private void Update()
         {
             _torch?.Update(Time.deltaTime);
