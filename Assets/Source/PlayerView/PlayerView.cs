@@ -1,8 +1,10 @@
 using System;
+using System.Runtime.CompilerServices;
 using Source.InputSystem;
 using Source.MovementSystem;
 using UnityEngine;
 
+[assembly: InternalsVisibleTo("Assembly-Csharp")]
 namespace Source.PlayerView
 {
     internal sealed class PlayerView : MonoBehaviour

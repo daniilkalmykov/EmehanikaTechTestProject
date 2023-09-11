@@ -1,6 +1,8 @@
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
+[assembly: InternalsVisibleTo("Assembly-Csharp")]
 namespace Source.InputSystem
 {
     internal class MobileInput : MonoBehaviour, IInput

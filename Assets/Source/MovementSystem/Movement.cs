@@ -1,8 +1,11 @@
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Assembly-Csharp")]
 namespace Source.MovementSystem
 {
-    internal sealed class Movable : IMovable
+    internal sealed class Movement : IMovable
     {
-        public Movable(float speed, float jumpSpeed)
+        public Movement(float speed, float jumpSpeed)
         {
             Speed = speed;
             JumpSpeed = jumpSpeed;
