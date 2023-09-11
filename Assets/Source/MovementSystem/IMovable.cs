@@ -1,6 +1,6 @@
 namespace Source.MovementSystem
 {
-    public interface IMovement
+    public interface IMovable
     {
         float Speed { get; }
         float JumpSpeed { get; }

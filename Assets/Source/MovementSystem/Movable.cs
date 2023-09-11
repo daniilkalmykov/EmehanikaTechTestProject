@@ -1,8 +1,8 @@
 namespace Source.MovementSystem
 {
-    internal sealed class Movement : IMovement
+    internal sealed class Movable : IMovable
     {
-        public Movement(float speed, float jumpSpeed)
+        public Movable(float speed, float jumpSpeed)
         {
             Speed = speed;
             JumpSpeed = jumpSpeed;
