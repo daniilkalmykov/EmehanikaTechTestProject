@@ -7,6 +7,6 @@ namespace Source.Models
             TimeToFizzle = timeToFizzle;
         }
 
-        public float TimeToFizzle { get; private set; }
+        public float TimeToFizzle { get; }
     }
 }
