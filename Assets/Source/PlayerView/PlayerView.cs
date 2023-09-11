@@ -18,7 +18,7 @@ namespace Source.PlayerView
                 return;
 
             var currentTransform = transform;
-            currentTransform.position = currentTransform.right * (_movable.Speed * Time.deltaTime);
+            currentTransform.position += Vector3.right * (_movable.Speed * Time.deltaTime);
         }
         
         public void Init(IMovable movable, IInput input)
