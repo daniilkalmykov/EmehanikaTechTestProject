@@ -10,10 +10,10 @@ namespace Source.PlayerView
 {
     internal sealed class PlayerView : MonoBehaviour
     {
+        private bool _onGround = true;
         private IMovable _movable;
         private IInput _input;
         private Rigidbody _rigidbody;
-        private bool _onGround = true;
 
         private void Update()
         {
