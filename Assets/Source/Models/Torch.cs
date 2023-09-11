@@ -1,3 +1,6 @@
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Assembly-Csharp")]
 namespace Source.Models
 {
     internal sealed class Torch : ITorch

@@ -1,7 +1,9 @@
 using System;
+using System.Runtime.CompilerServices;
 using Source.Models;
 using UnityEngine;
 
+[assembly: InternalsVisibleTo("Assembly-Csharp")]
 namespace Source.TorchView
 {
     internal sealed class TorchView : MonoBehaviour
