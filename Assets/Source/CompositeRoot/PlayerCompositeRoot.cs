@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Source.CompositeRoot
 {
+    [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(MobileInput))]
     [RequireComponent(typeof(PlayerView.PlayerView))]
     internal sealed class PlayerCompositeRoot : CompositeRoot
@@ -14,15 +15,17 @@ namespace Source.CompositeRoot
         private PlayerView.PlayerView _playerView;
         private MobileInput _mobileInput;
         private Movement _movement;
+        private Rigidbody _rigidbody;
 
         public override void Compose()
         {
             _playerView = GetComponent<PlayerView.PlayerView>();
             _mobileInput = GetComponent<MobileInput>();
+            _rigidbody = GetComponent<Rigidbody>();
 
             _movement = new Movement(_speed, _jumpSpeed);
 
-            _playerView.Init(_movement, _mobileInput);
+            _playerView.Init(_movement, _mobileInput, _rigidbody);
         }
     }
 }
