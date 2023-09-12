@@ -2,9 +2,10 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [assembly: InternalsVisibleTo("Assembly-Csharp")]
-namespace Source.CameraView
+[assembly: InternalsVisibleTo("Infrastructure")]
+namespace Source.PlayerFollowerView
 {
-    internal sealed class CameraView : MonoBehaviour
+    internal sealed class PlayerFollowerView : MonoBehaviour
     {
         private Transform _player;
 

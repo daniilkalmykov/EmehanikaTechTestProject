@@ -24,7 +24,7 @@ namespace Source.CompositeRoot
                 return;
             
             coinCompositeRoot.Coin.Collect(_torchCompositeRoot.Torch);
-            Destroy(coinCompositeRoot);
+            coinCompositeRoot.gameObject.SetActive(false);
         }
 
         public override void Compose()
