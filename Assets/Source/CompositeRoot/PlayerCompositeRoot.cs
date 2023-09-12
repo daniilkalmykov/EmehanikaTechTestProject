@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Source.CompositeRoot
 {
+    [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(MobileInput))]
     [RequireComponent(typeof(PlayerView.PlayerView))]
@@ -17,6 +18,7 @@ namespace Source.CompositeRoot
         private MobileInput _mobileInput;
         private Movement _movement;
         private Rigidbody _rigidbody;
+        private Animator _animator;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -37,10 +39,11 @@ namespace Source.CompositeRoot
             _playerView = GetComponent<PlayerView.PlayerView>();
             _mobileInput = GetComponent<MobileInput>();
             _rigidbody = GetComponent<Rigidbody>();
+            _animator = GetComponent<Animator>();
 
             _movement = new Movement(_speed, _jumpSpeed);
 
-            _playerView.Init(_movement, _mobileInput, _rigidbody);
+            _playerView.Init(_movement, _mobileInput, _rigidbody, _animator);
         }
     }
 }

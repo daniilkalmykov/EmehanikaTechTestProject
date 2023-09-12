@@ -10,13 +10,19 @@ namespace Source.PlayerView
 {
     internal sealed class PlayerView : MonoBehaviour
     {
+        private readonly int OnGround = Animator.StringToHash("OnGround");
+        
         private bool _onGround = true;
         private IMovable _movable;
         private IInput _input;
         private Rigidbody _rigidbody;
+        private Animator _animator;
 
         private void Update()
         {
+            if (_animator != null)
+                _animator.SetBool(OnGround, _onGround);
+            
             if (_input == null || _movable == null || _rigidbody == null)
                 return;
 
@@ -52,11 +58,12 @@ namespace Source.PlayerView
             currentTransform.position += Vector3.right * (_movable.Speed * Time.deltaTime);
         }
 
-        public void Init(IMovable movable, IInput input, Rigidbody playerRigidbody)
+        public void Init(IMovable movable, IInput input, Rigidbody playerRigidbody, Animator animator)
         {
             _movable = movable ?? throw new ArgumentNullException();
             _input = input ?? throw new ArgumentNullException();
             _rigidbody = playerRigidbody;
+            _animator = animator;
         }
     }
 }
