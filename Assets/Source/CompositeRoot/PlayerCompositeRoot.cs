@@ -28,6 +28,7 @@ namespace Source.CompositeRoot
             else if (other.TryGetComponent(out WaterCompositeRoot waterCompositeRoot))
             {
                 waterCompositeRoot.Water.Use(_torchCompositeRoot.Torch);
+                waterCompositeRoot.gameObject.SetActive(false);
             }
         }
 
