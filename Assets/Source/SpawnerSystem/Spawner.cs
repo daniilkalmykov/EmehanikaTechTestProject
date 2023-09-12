@@ -40,6 +40,9 @@ namespace Source.SpawnerSystem
             o.gameObject.SetActive(true);
         }
 
-        protected abstract void InitObjects();
+        protected virtual void InitObjects()
+        {
+            
+        }
     }
 }
