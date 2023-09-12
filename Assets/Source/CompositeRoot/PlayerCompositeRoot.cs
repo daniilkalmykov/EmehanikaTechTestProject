@@ -20,11 +20,15 @@ namespace Source.CompositeRoot
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out CoinCompositeRoot coinCompositeRoot) == false) 
-                return;
-            
-            coinCompositeRoot.Coin.Collect(_torchCompositeRoot.Torch);
-            coinCompositeRoot.gameObject.SetActive(false);
+            if (other.TryGetComponent(out CoinCompositeRoot coinCompositeRoot))
+            {
+                coinCompositeRoot.Coin.Collect(_torchCompositeRoot.Torch);
+                coinCompositeRoot.gameObject.SetActive(false);
+            }
+            else if (other.TryGetComponent(out WaterCompositeRoot waterCompositeRoot))
+            {
+                waterCompositeRoot.Water.Use(_torchCompositeRoot.Torch);
+            }
         }
 
         public override void Compose()
