@@ -11,11 +11,21 @@ namespace Source.CompositeRoot
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
+        [SerializeField] private TorchCompositeRoot _torchCompositeRoot;
         
         private PlayerView.PlayerView _playerView;
         private MobileInput _mobileInput;
         private Movement _movement;
         private Rigidbody _rigidbody;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out CoinCompositeRoot coinCompositeRoot) == false) 
+                return;
+            
+            coinCompositeRoot.Coin.Collect(_torchCompositeRoot.Torch);
+            Destroy(coinCompositeRoot);
+        }
 
         public override void Compose()
         {

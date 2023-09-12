@@ -14,7 +14,7 @@ namespace Source.CompositeRoot
             _playerCompositeRoot.Compose();
             _torchCompositeRoot.Compose();
             _cameraCompositeRoot.Compose();
-
+            
             _levelCompositeRoot.Init(_torchCompositeRoot.Torch);
             _levelCompositeRoot.Compose();
         }
