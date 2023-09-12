@@ -5,5 +5,6 @@ namespace Source.Models
         float TimeToFizzle { get; }
 
         void TryAddTime(float time);
+        void ReduceTime(float time);
     }
 }

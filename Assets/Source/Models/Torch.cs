@@ -21,6 +21,14 @@ namespace Source.Models
             TimeToFizzle += time;
         }
 
+        public void ReduceTime(float time)
+        {
+            if (time <= 0)
+                throw new ArgumentException();
+
+            TimeToFizzle -= time;
+        }
+
         public void Update(float deltaTime)
         {
             TimeToFizzle -= deltaTime;
