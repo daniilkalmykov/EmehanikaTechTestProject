@@ -8,6 +8,8 @@ namespace Source.CompositeRoot
     {
         private TMP_Text _tmpText;
         private Timer _timer;
+
+        public ITimer Timer => _timer;
         
         public override void Compose()
         {

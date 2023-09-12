@@ -1,6 +1,7 @@
 using System;
 using Source.LevelSystem;
 using Source.Models;
+using Source.TimersSystem;
 using UnityEngine;
 
 namespace Source.CompositeRoot
@@ -9,6 +10,7 @@ namespace Source.CompositeRoot
     {
         private Level _level;
         private ITorch _torch;
+        private ITimer _timer;
 
         private void OnDisable()
         {
@@ -27,13 +29,15 @@ namespace Source.CompositeRoot
             _level.Ended += OnEnded;
         }
 
-        public void Init(ITorch torch)
+        public void Init(ITorch torch, ITimer timer)
         {
             _torch = torch ?? throw new ArgumentNullException();
+            _timer = timer ?? throw new ArgumentNullException();
         }
 
         private void OnEnded()
         {
+            PlayerData.PlayerData.SetTime(_timer.Time);
             Time.timeScale = 0;
         }
     }

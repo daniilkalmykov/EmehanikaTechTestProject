@@ -18,8 +18,8 @@ namespace Source.CompositeRoot
             _cameraCompositeRoot.Compose();
             _groundCompositeRoot.Compose();
             _timerCompositeRoot.Compose();
-            
-            _levelCompositeRoot.Init(_torchCompositeRoot.Torch);
+
+            _levelCompositeRoot.Init(_torchCompositeRoot.Torch, _timerCompositeRoot.Timer);
             _levelCompositeRoot.Compose();
         }
     }
