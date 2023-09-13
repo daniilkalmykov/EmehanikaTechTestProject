@@ -9,6 +9,7 @@ namespace Source.CompositeRoot
         [SerializeField] private LevelCompositeRoot _levelCompositeRoot;
         [SerializeField] private GroundCompositeRoot _groundCompositeRoot;
         [SerializeField] private TimerCompositeRoot _timerCompositeRoot;
+        [SerializeField] private StartButtonCompositeRoot _buttonCompositeRoot;
         
         private void Awake()
         {
@@ -18,6 +19,7 @@ namespace Source.CompositeRoot
             _torchCompositeRoot.Compose();
             _groundCompositeRoot.Compose();
             _timerCompositeRoot.Compose();
+            _buttonCompositeRoot.Compose();
 
             _levelCompositeRoot.Init(_torchCompositeRoot.Torch, _timerCompositeRoot.Timer);
             _levelCompositeRoot.Compose();
