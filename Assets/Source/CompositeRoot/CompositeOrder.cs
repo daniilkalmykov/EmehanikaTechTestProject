@@ -12,6 +12,8 @@ namespace Source.CompositeRoot
         
         private void Awake()
         {
+            Time.timeScale = 0;
+            
             _playerCompositeRoot.Compose();
             _torchCompositeRoot.Compose();
             _groundCompositeRoot.Compose();
