@@ -10,9 +10,7 @@ namespace Source.Infrastructure
         private void Update()
         {
             if (_material == null)
-            {
                 return;
-            }
             
             var materialMainTextureOffset = _material.mainTextureOffset;
             materialMainTextureOffset.x -= Time.deltaTime * _speed;

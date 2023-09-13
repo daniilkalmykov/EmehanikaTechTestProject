@@ -7,7 +7,6 @@ namespace Source.CompositeRoot
         [SerializeField] private PlayerCompositeRoot _playerCompositeRoot;
         [SerializeField] private TorchCompositeRoot _torchCompositeRoot;
         [SerializeField] private LevelCompositeRoot _levelCompositeRoot;
-        [SerializeField] private CameraCompositeRoot _cameraCompositeRoot;
         [SerializeField] private GroundCompositeRoot _groundCompositeRoot;
         [SerializeField] private TimerCompositeRoot _timerCompositeRoot;
         
@@ -15,7 +14,6 @@ namespace Source.CompositeRoot
         {
             _playerCompositeRoot.Compose();
             _torchCompositeRoot.Compose();
-            _cameraCompositeRoot.Compose();
             _groundCompositeRoot.Compose();
             _timerCompositeRoot.Compose();
 
