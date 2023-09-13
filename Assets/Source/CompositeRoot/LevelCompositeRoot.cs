@@ -3,11 +3,14 @@ using Source.LevelSystem;
 using Source.Models;
 using Source.TimersSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Source.CompositeRoot
 {
     public sealed class LevelCompositeRoot : CompositeRoot
     {
+        [SerializeField] private Image _endScreen;
+        
         private Level _level;
         private ITorch _torch;
         private ITimer _timer;
@@ -24,6 +27,8 @@ namespace Source.CompositeRoot
 
         public override void Compose()
         {
+            _endScreen.gameObject.SetActive(false);
+            
             _level = new Level(_torch);
 
             _level.Ended += OnEnded;
@@ -38,6 +43,8 @@ namespace Source.CompositeRoot
         private void OnEnded()
         {
             PlayerData.PlayerData.SetTime(_timer.Time);
+            _endScreen.gameObject.SetActive(true);
+            
             Time.timeScale = 0;
         }
     }
