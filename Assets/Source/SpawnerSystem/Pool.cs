@@ -15,7 +15,7 @@ namespace Source.SpawnerSystem
 
         protected void CreateObject(T t, Vector3 spawnPoint)
         {
-            var newObject = Instantiate(t, spawnPoint, Quaternion.identity, transform);
+            var newObject = Instantiate(t, spawnPoint, t.transform.rotation, transform);
             newObject.gameObject.SetActive(false);
 
             _pool.Add(newObject);

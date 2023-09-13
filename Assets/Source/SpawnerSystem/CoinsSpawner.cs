@@ -11,7 +11,7 @@ namespace Source.SpawnerSystem
             {
                 if (root.TryGetComponent(out CoinCompositeRoot coinCompositeRoot) == false)
                     throw new ArgumentNullException();
-                
+
                 coinCompositeRoot.Compose();
             }
         }
