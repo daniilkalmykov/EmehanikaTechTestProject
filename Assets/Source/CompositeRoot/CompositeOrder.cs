@@ -10,6 +10,7 @@ namespace Source.CompositeRoot
         [SerializeField] private GroundCompositeRoot _groundCompositeRoot;
         [SerializeField] private TimerCompositeRoot _timerCompositeRoot;
         [SerializeField] private StartButtonCompositeRoot _buttonCompositeRoot;
+        [SerializeField] private ScoreCompositeRoot _scoreCompositeRoot;
         
         private void Awake()
         {
@@ -20,6 +21,7 @@ namespace Source.CompositeRoot
             _groundCompositeRoot.Compose();
             _timerCompositeRoot.Compose();
             _buttonCompositeRoot.Compose();
+            _scoreCompositeRoot.Compose();
 
             _levelCompositeRoot.Init(_torchCompositeRoot.Torch, _timerCompositeRoot.Timer);
             _levelCompositeRoot.Compose();

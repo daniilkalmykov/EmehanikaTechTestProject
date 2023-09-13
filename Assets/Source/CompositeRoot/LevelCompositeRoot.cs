@@ -10,6 +10,7 @@ namespace Source.CompositeRoot
     public sealed class LevelCompositeRoot : CompositeRoot
     {
         [SerializeField] private Image _endScreen;
+        [SerializeField] private ScoreCompositeRoot _scoreCompositeRoot;
         
         private Level _level;
         private ITorch _torch;
@@ -43,7 +44,9 @@ namespace Source.CompositeRoot
         private void OnEnded()
         {
             PlayerData.PlayerData.SetTime(_timer.Time);
+            
             _endScreen.gameObject.SetActive(true);
+            _scoreCompositeRoot.Show();
             
             Time.timeScale = 0;
         }
